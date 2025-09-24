@@ -141,7 +141,11 @@ const FileUploader = ({
   }, [fileListRef, notify, onFileUpdate, t])
 
   const uploadBatchFiles = useCallback((bFiles: FileItem[]) => {
-    bFiles.forEach(bf => (bf.progress = 0))
+    bFiles.forEach(bf => {
+      const mutableFile = { ...bf };
+      mutableFile.progress = 0;
+      // use mutableFile for upload
+    });
     return Promise.all(bFiles.map(fileUpload))
   }, [fileUpload])
 
