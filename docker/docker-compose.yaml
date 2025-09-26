@@ -693,7 +693,7 @@ services:
       ENABLE_WEBSITE_WATERCRAWL: ${ENABLE_WEBSITE_WATERCRAWL:-true}
     volumes:
       - ../web/.next/:/app/web/.next
-  # The postgres database.
+  # The postgres database. 
   db:
     image: postgres:15-alpine
     restart: always
